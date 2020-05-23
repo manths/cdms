@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row{
+  height: 50px;
+}
+.col{
+  top:25%;
+}
+@media only screen and (max-width: 600px) {
+  .row {
+    height: auto;
+  }
+}
