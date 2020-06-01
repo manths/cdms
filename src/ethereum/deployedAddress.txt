@@ -30,3 +30,8 @@ Contract deployed to 0x4464e6A4288bb60aDE15795A5Cc77b686F9eBAcA
 30/4/2020
 Attempting to deploy from account 0xB88b6A55A71BE7BC6e132Dd7A99E343DaCe85442
 Contract deployed to 0xA3756c6405D722B29386eF8a5F32FeC430901916
+
+1/06/2020
+Attempting to deploy from account 0xB88b6A55A71BE7BC6e132Dd7A99E343DaCe85442
+Contract deployed to 0xcAa4f5e1B9270edeD9e2b994FF684212aE03f9eA
+
