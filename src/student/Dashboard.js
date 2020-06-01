@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import GradeHistory from './gradeHistory';
 import Notiflix, { Notify } from 'notiflix';
 
 export default class Dash extends Component {
@@ -112,7 +111,6 @@ export default class Dash extends Component {
             return (
                 <div>
                     <h1>Hello student</h1>
-                    <GradeHistory />
                 </div>
             )
         }
