@@ -68,7 +68,7 @@ export default class Single_Mark extends Component {
     }
     getSem = () => {
         return this.state.semData.map((data, i) => {
-            if (data.department_id == this.props.batchid.dID)
+            if (data.batch_id == this.props.batchid.bID &&  data.department_id == this.props.batchid.dID)
                 return (
                     <option value={i} key={i} onClick={e => this.setState({ semSelect: e.target.value })}>{data.semester}</option>
                 )
@@ -104,8 +104,7 @@ export default class Single_Mark extends Component {
     }
 
     render() {
-        console.log('departid')
-        console.log(this.state.midsemData)
+        console.log(this.props)
         console.log(this.state.semData)
         let loading = this.state.loading;
         return (
