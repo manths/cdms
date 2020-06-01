@@ -10,14 +10,14 @@ export default class Studreq extends Component {
     }
 
     componentDidMount = async () => {
-        const studData = await axios.get('http://localhost:5000/student')
+        const studData = await axios.get('https://powerful-sea-39429.herokuapp.com/student')
         this.setState({ data: studData.data })
     }
 
     getFacData = async (e) => {
         this.setState({ getId: e.target.id })
         if (this.state.getId !== 0) {
-            const singelStudData = await axios.get('http://localhost:5000/find/student/' + this.state.getId)
+            const singelStudData = await axios.get('https://powerful-sea-39429.herokuapp.com/find/student/' + this.state.getId)
 
             try {
                 await window.web3.eth.getAccounts();
@@ -26,7 +26,7 @@ export default class Studreq extends Component {
                     .send({
                         from: window.web3.currentProvider.selectedAddress
                     });
-                await axios.delete('http://localhost:5000/find/student/' + this.state.getId)
+                await axios.delete('https://powerful-sea-39429.herokuapp.com/find/student/' + this.state.getId)
                 Notiflix.Notify.Success('Data Added Successfully!  ');
             } catch (err) {
                 Notiflix.Notify.Failure('You Reject Data' + err.message);

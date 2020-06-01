@@ -10,14 +10,14 @@ export default class Facreq extends Component {
         data: [],
     }
     componentDidMount = async () => {
-        const facData = await axios.get('http://localhost:5000/faculty')
+        const facData = await axios.get('https://powerful-sea-39429.herokuapp.com/faculty')
         this.setState({ data: facData.data })
     }
 
     getFacData = async (e) => {
         this.setState({ getId: e.target.id })
         if (this.state.getId !== 0) {
-            const singelFacData = await axios.get('http://localhost:5000/find/faculty/' + this.state.getId)
+            const singelFacData = await axios.get('https://powerful-sea-39429.herokuapp.com/find/faculty/' + this.state.getId)
 
             try {
                 await window.web3.eth.getAccounts();
@@ -26,7 +26,7 @@ export default class Facreq extends Component {
                     .send({
                         from: window.web3.currentProvider.selectedAddress
                     });
-                await axios.delete('http://localhost:5000/find/faculty/' + this.state.getId)
+                await axios.delete('https://powerful-sea-39429.herokuapp.com/find/faculty/' + this.state.getId)
                 Notiflix.Notify.Success('Data Added Successfully!  ');
             } catch (err) {
                 Notiflix.Notify.Failure('You Reject Data' + err.message);

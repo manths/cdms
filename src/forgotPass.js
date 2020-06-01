@@ -88,7 +88,7 @@ export default class ForgotPass extends Component {
         if (contactTrue !== undefined) {
             let msg = ' Your Password is ' + ' ' + passwordTrue
             try {
-                const res = await axios.get('http://localhost:5000/sms/' + contactTrue + '/' + msg)
+                const res = await axios.get('https://powerful-sea-39429.herokuapp.com/sms/' + contactTrue + '/' + msg)
                 console.log(res)
                 Notiflix.Notify.Success('text message sent Successfully  ');
             } catch (e) {

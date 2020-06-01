@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../src/login.css';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import faculties from '../src/ethereum/department';
 import students from '../src/ethereum/department';
 import ForgotPass from './forgotPass';
-
+import axios from 'axios';
 class Login extends Component {
     constructor() {
         super()
@@ -212,9 +212,6 @@ class Login extends Component {
         }
     }
     render() {
-        console.log('fac', this.state.facData)
-        console.log('stud', this.state.studData)
-
         if (this.facEmail == '' && this.facPass == '' && this.studEnroll == '' && this.studPass == '') {
             this.state.facData.map((data, i) => {
                 this.facEmail.push(data.email)

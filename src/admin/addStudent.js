@@ -150,7 +150,7 @@ class Add_student extends Component {
                     from: window.web3.currentProvider.selectedAddress
                 });
 
-            await axios.get('http://localhost:5000/sms/' + this.state.contact + '/' + msg)
+            await axios.get('https://powerful-sea-39429.herokuapp.com/sms/' + this.state.contact + '/' + msg)
             Notiflix.Notify.Success('Data Added Successfully!  ');
             this.setState({ loading: false, firstName: '', lastName: '', enrollmentNo: Number, contact: Number, });
         } catch (err) {

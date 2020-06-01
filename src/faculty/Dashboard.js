@@ -36,7 +36,7 @@ export default class Dash extends Component {
     componentDidMount = async () => {
         if (this.state.facPass == 'passwordNotChanged' && this.state.facPass !== null) {
 
-            const data = await axios.get('http://localhost:5000/faculty')
+            const data = await axios.get('https://powerful-sea-39429.herokuapp.com/faculty')
             let [email] = data.data.map((val, i) => {
                 if (val.email == this.state.email) {
                     this.setState({ getId: val._id })
@@ -49,7 +49,7 @@ export default class Dash extends Component {
                 facPassObj = JSON.stringify(facPassObj)
 
                 try {
-                    const res = await axios.post('http://localhost:5000/faculty', {
+                    const res = await axios.post('https://powerful-sea-39429.herokuapp.com/faculty', {
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
                         email: this.state.email,
@@ -76,7 +76,7 @@ export default class Dash extends Component {
             facPassObj = JSON.stringify(facPassObj)
 
             try {
-                await axios.patch('http://localhost:5000/find/faculty/' + this.state.getId, {
+                await axios.patch('https://powerful-sea-39429.herokuapp.com/find/faculty/' + this.state.getId, {
                     password: facPassObj,
                 })
                 Notiflix.Notify.Success('Password Has been Updated Please Wait untill admin not accept Your Request!  ');
